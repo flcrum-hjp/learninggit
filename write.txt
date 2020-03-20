@@ -1,0 +1,61 @@
+#!/bin/bash
+cd /home/ap/cloudapp/webhome/pub_platform/
+tar -zcvf WEB-INF.tar.gz WEB-INF
+rm -f /home/ap/cloudapp/webhome/pub_platform/WEB-INF/lib/jackson-databinnd-2.9.9.2.jar
+cp /home/ap/cloudapp/download/20200302/jackson-databind-2.10.1.jar /home/ap/cloudapp/webhome/pub_platform/WEB-INF/lib/
+cd /home/ap/cloudapp/webapp/tomcat_pub_platform/bin
+./catalina.sh restart
+
+#!/bin/bash
+tar -zcvf pub_message_server_lib.tar.gz /home/ap/cloudapp/webhome/pub_message_server/pub_message_server_lib
+tar -zcvf pub_system.tar.gz /home/ap/cloudapp/webhome/pub_system/WEB-INF
+rm -f /home/ap/cloudapp/webhome/pub_system/WEB-INF/lib/jackson-databinnd-2.9.9.3.jar
+rm -f /home/ap/cloudapp/webhome/pub_message_server/pub_message_server_lib/jackson-databinnd-2.9.9.3.jar
+cp ./jackson-databind-2.10.1.jar /home/ap/cloudapp/webhome/pub_system/WEB-INF/lib/
+cp ./jackson-databind-2.10.1.jar /home/ap/cloudapp/webhome/pub_message_server/pub_message_server_lib/
+cd /home/ap/cloudapp/webhome/pub_message_server/
+
+#!/bin/bash
+tar -zcvf as_eut.tar.gz /home/ap/cloudapp/eut/as_eut_2
+tar -zcvf as_eut.tar.gz /home/ap/cloudapp/eut_interface
+cp ./jackson-databind-2.10.1.jar /home/ap/cloudapp/eut/as_eut_2/lib/
+cp ./jackson-databind-2.10.1.jar /home/ap/cloudapp/eut/as_eut_2/eut_interface_lib
+cp ./jackson-databind-2.10.1.jar /home/ap/cloudapp/eut/eut_interface/eut_interface_lib
+rm -f /home/ap/cloudapp/as_eut_2/lib/jackson-databind-2.9.9.3.jar
+cp ./jackson-databind-2.10.1.jar /home/ap/cloudapp/as_eut_2/eut_interface_lib/jackson-databind-2.9.9.3.jar
+rm -f /home/ap/cloudapp/eut_interface_lib/jackson-databind-2.9.9.3.jar
+
+#!/bin/bash
+tar -zcf as_eut_1.tar.gz /home/ap/cloudapp/eut/as_eut_1/lib /home/ap/cloudapp/eut/as_eut_1/eut_interface_lib
+sleep 1
+tar -zcf eut_interface.tar.gz /home/ap/cloudapp/eut_interface/eut_interface_lib
+sleep 1
+cp ./jackson-databind-2.10.1.jar /home/ap/cloudapp/eut/as_eut_1/eut_interface_lib/
+cp ./jackson-databind-2.10.1.jar /home/ap/cloudapp/eut/eut_interface/eut_interface_lib
+rm -f /home/ap/cloudapp/as_eut_1/lib/jackson-databind-2.9.9.3.jar
+rm -f /home/ap/cloudapp/as_eut_1/eut_interface_lib/jackson-databind-2.9.9.3.jar
+rm -f /home/ap/cloudapp/eut_interface/eut_interface_lib/jackson-databind-2.9.9.3.jar
+
+cp ./jackson-databind-2.10.1.jar /home/ap/cloudapp/as_eut_2/eut_interface_lib/jackson-databind-2.9.9.3.jar
+rm -f /home/ap/cloudapp/eut_interface_lib/jackson-databind-2.9.9.3.jar
+
+rm -f /home/ap/cloudapp/webhome/pub_message_server/pub_message_server/pub_message_server_lib/jackson-databind-2.9.9.3.jar
+cp jackson-databind-2.10.1.jar /home/ap/cloudapp/webhome/pub_message_server/pub_message_server/pub_message_server_lib/
+redis1 10.204.169.11
+redis2 10.204.169.8
+Cloudapp#cdsyq2019
+scp rediscluster.tar.gz cloudapp@10.204.169.16:/home/ap/cloudapp
+scp rediscluster.tar.gz cloudapp@10.204.169.11:/home/ap/cloudapp
+scp rediscluster.tar.gz cloudapp@10.204.169.8:/home/ap/cloudapp
+1. scp redis_237.tar.gz cloudapp@10.204.169.11:/home/ap/cloudapp
+scp redis_237.tar.gz cloudapp@10.204.169.8:/home/ap/cloudapp
+/home/ap/cloudapp/redis/bin/redis-trib.rb create --replicas  1  10.204.169.11:7001 10.204.169.11:7002 10.204.169.11:7003 10.204.169.8:7004 10.204.169.8:7005 10.204.169.8:7006
+scp rediscluster.tar.gz cloudapp@10.204.180.133:/home/ap/cloudapp
+scp rediscluster.tar.gz cloudapp@10.204.180.130:/home/ap/cloudapp
+rm -f appendonly.aof dump.rdb
+10.204.169.5  10.204.169.14 
+10.204.180.133
+telnet  10.204.180.133 22
+scp gcc-5.3.0.tar.gz cloudapp@10.204.169.5:/home/ap/cloudapp
+scp jianghangyilai.tar.gz cloudapp@10.204.169.5:/home/ap/cloudapp
+scp ST_taiyuejianhang.tar.gz cloudapp@10.204.169.14:/home/ap/cloudapp

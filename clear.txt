@@ -1,0 +1,2 @@
+find ./ -name fastjson*
+find ./ -name fastjson-1.1*.jar -type f -print -exec rm -rf {} \;
